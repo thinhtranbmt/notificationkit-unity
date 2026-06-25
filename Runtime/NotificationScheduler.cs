@@ -137,7 +137,10 @@ namespace NotificationKit
         /// <summary>Cancels a scheduled notification by ID. Safe if not scheduled.</summary>
         public void Cancel(string id)
         {
-            if (string.IsNullOrEmpty(id)) return;
+            if (string.IsNullOrEmpty(id))
+            {
+                return;
+            }
 
 #if UNITY_IOS
             iOSNotificationCenter.RemoveScheduledNotification(id);
@@ -259,7 +262,10 @@ namespace NotificationKit
         private ReceivedNotification CheckForiOSLaunchNotification()
         {
             var n = iOSNotificationCenter.GetLastRespondedNotification();
-            if (n == null) return null;
+            if (n == null)
+            {
+                return null;
+            }
 
             var received = new ReceivedNotification
             {
@@ -347,7 +353,10 @@ namespace NotificationKit
         private ReceivedNotification CheckForAndroidLaunchNotification()
         {
             var intent = AndroidNotificationCenter.GetLastNotificationIntent();
-            if (intent == null) return null;
+            if (intent == null)
+            {
+                return null;
+            }
 
             var received = new ReceivedNotification
             {
@@ -415,7 +424,10 @@ namespace NotificationKit
         /// </summary>
         private static int IdToInt(string id)
         {
-            if (string.IsNullOrEmpty(id)) return 0;
+            if (string.IsNullOrEmpty(id))
+            {
+                return 0;
+            }
 
             unchecked
             {

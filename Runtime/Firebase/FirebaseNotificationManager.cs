@@ -38,7 +38,10 @@ namespace NotificationKit
 
         public async UniTask<bool> InitializeAsync(CancellationToken ct = default)
         {
-            if (IsInitialized) return true;
+            if (IsInitialized)
+            {
+                return true;
+            }
 
             try
             {

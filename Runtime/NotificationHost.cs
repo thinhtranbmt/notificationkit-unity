@@ -77,7 +77,10 @@ namespace NotificationKit
 
         private void OnApplicationFocus(bool hasFocus)
         {
-            if (!hasFocus || !_initialized) return;
+            if (!hasFocus || !_initialized)
+            {
+                return;
+            }
             Scheduler.CancelAll();
             RunExecutors();
         }
