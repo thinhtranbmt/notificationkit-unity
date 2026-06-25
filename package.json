@@ -1,0 +1,30 @@
+{
+  "name": "com.mycore.notificationkit",
+  "version": "0.1.0",
+  "displayName": "NotificationKit",
+  "description": "A reusable Unity local notification module (iOS + Android) with an optional, separately-gated Firebase push sub-feature. No singleton: a plain NotificationScheduler engine the app owns, a thin NotificationHost MonoBehaviour for lifecycle, and an INotificationExecutor seam. Zero game-specific dependencies.",
+  "unity": "2021.3",
+  "documentationUrl": "https://github.com/thinhtranbmt/notificationkit-unity#readme",
+  "changelogUrl": "https://github.com/thinhtranbmt/notificationkit-unity/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/thinhtranbmt/notificationkit-unity/blob/main/LICENSE.md",
+  "dependencies": {
+    "com.unity.mobile.notifications": "2.4.1"
+  },
+  "keywords": [
+    "notification",
+    "local-notification",
+    "push",
+    "fcm",
+    "unitask"
+  ],
+  "author": {
+    "name": "MyCore"
+  },
+  "samples": [
+    {
+      "displayName": "Notifications (usage + adapter)",
+      "description": "Generic usage example + a game-specific executor template (guarded by NOTIFICATIONKIT_SAMPLES).",
+      "path": "Samples~/Notifications"
+    }
+  ]
+}

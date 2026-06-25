@@ -1,0 +1,19 @@
+{
+    "name": "MyCore.NotificationKit.Firebase",
+    "rootNamespace": "NotificationKit",
+    "references": [
+        "MyCore.NotificationKit",
+        "UniTask"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "NOTIFICATIONKIT_FIREBASE"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
