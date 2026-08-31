@@ -5,7 +5,7 @@ using UnityEngine;
 namespace NotificationKit
 {
     // -------------------------------------------------------------------------
-    // NotificationKit.Core — Roxane-free models + the executor seam.
+    // NotificationKit.Core — game-agnostic models + the executor seam.
     //
     // Extracted from MyNotification (namespace Core.Notifications). Same packaging
     // convention as IAPKit / HttpKit / DataToolKit: plain folder, no asmdef,

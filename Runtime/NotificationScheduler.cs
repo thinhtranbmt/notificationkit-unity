@@ -21,7 +21,7 @@ namespace NotificationKit
     /// (see <see cref="NotificationHost"/> for a drop-in MonoBehaviour that forwards Unity
     /// lifecycle) and holds the reference itself — there is no global Instance.
     ///
-    /// Requires: com.unity.mobile.notifications. Roxane-free: all game-specific logic is
+    /// Requires: com.unity.mobile.notifications. game-agnostic: all game-specific logic is
     /// supplied through <see cref="INotificationExecutor"/>, never referenced here.
     /// </summary>
     public sealed class NotificationScheduler

@@ -21,7 +21,7 @@ namespace NotificationKit
     /// PUSH (remote) notification manager via Firebase Cloud Messaging.
     ///
     /// PLAIN class, no singleton — the app OWNS it, holds the reference, and calls
-    /// <see cref="Dispose"/> on teardown. Roxane-free: it raises C# events for token /
+    /// <see cref="Dispose"/> on teardown. game-agnostic: it raises C# events for token /
     /// message; the app POSTs the token to its own backend and routes deep-links.
     /// </summary>
     public sealed class FirebaseNotificationManager : IDisposable

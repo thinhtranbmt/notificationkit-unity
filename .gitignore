@@ -1,3 +1,31 @@
+# This repo is a bare Unity UPM package (consumed via git URL), not a full project.
+#
+# IMPORTANT: never ignore *.meta — Unity ignores scripts in an immutable (git) package
+# that have no meta file, and the types silently fail to resolve.
+#
+# IMPORTANT: never ignore Samples~/ — a global `*~` rule will swallow it and the package
+# ships without its samples. The negation below defends against that.
+!Samples~/
+!*.meta
+
+# Unity project cruft (only if someone opens this folder inside a project)
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# IDE / build artifacts
+.vs/
+.idea/
+.vscode/
+*.csproj
+*.sln
+*.user
+*.tmp
+
+# OS
 .DS_Store
 Thumbs.db
-*.tmp

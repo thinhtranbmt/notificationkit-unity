@@ -2,7 +2,7 @@
 // SAMPLE (NOT COMPILED) — Unity ignores any folder ending in `~`.
 //
 // This is the ONE game-specific piece that must NOT live inside the Kit: an
-// INotificationExecutor implementation that reaches into Roxane (ServiceLocator,
+// INotificationExecutor implementation that reaches into the app (ServiceLocator,
 // GameData, DailyRewardManager). It is the original MyNotification/InGame/
 // DailyRewardNotificationExecutor.cs, retargeted onto NotificationKit.
 //

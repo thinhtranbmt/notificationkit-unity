@@ -31,20 +31,24 @@ engine is a plain class the app owns, mirroring the `HttpKit` / `IAPKit` convent
 | Dependency | Notes |
 |---|---|
 | `com.unity.mobile.notifications` | Required (local notifications). |
-| UniTask (`com.cysharp.unitask`) | Required. Install separately (Git/OpenUPM). |
+| UniTask (`com.cysharp.unitask`) | Declared in `package.json`; resolves via the OpenUPM scoped registry — see Install. |
 | Firebase Messaging | **Only** if you enable push — define `NOTIFICATIONKIT_FIREBASE`. The base kit has zero Firebase dependency. |
 
 ## Install
 
-1. **Install UniTask first** (not resolvable from the Unity registry) — add to `Packages/manifest.json`:
+1. **OpenUPM scoped registry** — UniTask is declared in this package's `dependencies` but is
+   published on OpenUPM, not the Unity registry. Add the registry once per project in
+   `Packages/manifest.json` and UPM resolves UniTask by itself:
    ```json
-   "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask"
+   "scopedRegistries": [
+     { "name": "package.openupm.com", "url": "https://package.openupm.com", "scopes": [ "com.cysharp" ] }
+   ]
    ```
 2. **Install NotificationKit** (Mobile Notifications auto-resolves from the registry):
    ```json
-   "com.mycore.notificationkit": "https://github.com/thinhtranbmt/notificationkit-unity.git#v0.1.0"
+   "com.mycore.notificationkit": "https://github.com/thinhtranbmt/notificationkit-unity.git#v0.2.0"
    ```
-   Or via Package Manager UI → *Add package from git URL…*. Drop `#v0.1.0` to track `main`.
+   Or via Package Manager UI → *Add package from git URL…*. Drop `#v0.2.0` to track `main`.
 
 > Push ships as a separate assembly (`MyCore.NotificationKit.Firebase`) gated by the
 > `NOTIFICATIONKIT_FIREBASE` define constraint — excluded from compilation entirely unless
@@ -86,5 +90,5 @@ Then the app owns a `FirebaseNotificationManager`, calls `InitializeAsync()`, su
 `OnTokenReceived` (POST the token to your backend), and calls `Dispose()` on teardown.
 
 ## Samples
-`Samples~/NotificationExamples.cs` — generic usage. `Samples~/RoxaneNotificationAdapters.cs`
+`Samples~/NotificationExamples.cs` — generic usage. `Samples~/AppNotificationAdapters.cs`
 — a game-specific executor example (guarded by `NOTIFICATIONKIT_SAMPLES`).
