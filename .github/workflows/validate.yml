@@ -2,7 +2,10 @@ name: validate
 
 # Packaging rules live in thinhtranbmt/unity-package-ci so a fix lands on every package at once,
 # instead of being re-discovered one repo at a time. No Unity licence needed: the checks are static.
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   validate:
